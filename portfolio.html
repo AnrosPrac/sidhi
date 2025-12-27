@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Sidhi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- IBM Plex Serif (Headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Inter (Body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['IBM Plex Serif', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0a0d14',
+            fog: '#6b7280',
+            ash: '#374151',
+            line: '#e5e7eb',
+            paper: '#f9fafb',
+
+            darkInk: '#e5e7eb',
+            darkFog: '#9ca3af',
+            darkAsh: '#9ca3af',
+            darkLine: '#1f2937',
+            darkPaper: '#0a0d14',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Dark mode bootstrap -->
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-wrap {
+      overflow: hidden;
+    }
+    .zoom-img {
+      transform: scale(1.08);
+      transition: transform 2.8s ease;
+    }
+    .zoom-img.visible {
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
+
+  <!-- HEADER -->
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
+      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="governance.html">Governance</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="max-w-7xl mx-auto px-10 pt-52 pb-40">
+    <h1 class="font-serif text-5xl leading-tight reveal">
+      Portfolio Registry
+    </h1>
+
+    <p class="mt-16 text-xl max-w-4xl leading-relaxed reveal
+              text-ash dark:text-darkAsh">
+      This page records the systems governed under Sidhi.
+      <br><br>
+      Each entry represents an independent initiative operating
+      under defined boundaries, long-term oversight, and structural discipline.
+      <br><br>
+      Inclusion in this registry signifies responsibility, not promotion.
+    </p>
+  </section>
+
+  <!-- ARCHIVE IMAGE -->
+  <section class="zoom-wrap">
+    <img src="assets/images/archive-corridor.jpg"
+         class="w-full h-[90vh] object-cover grayscale zoom-img"
+         alt="Institutional archive corridor" />
+  </section>
+
+  <!-- REGISTRY LIST -->
+  <section class="max-w-7xl mx-auto px-10 py-44">
+    <h2 class="font-serif text-4xl mb-24 reveal">
+      Registered Initiatives
+    </h2>
+
+    <!-- ENTRY 1 -->
+    <div class="border-t border-line dark:border-darkLine py-16 reveal">
+    <h3 class="font-serif text-2xl mb-6">Lumetrix</h3>
+
+    <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+      Lumetrix is the first operational system developed under Sidhi.
+      It is an automation-driven PDF and document generation platform
+      created to eliminate repetitive manual workflows in academic
+      and institutional environments.
+      <br><br>
+      The system serves as a practical foundation for automation-first
+      thinking, continuously improved through real student usage and
+      iterative refinement.
+    </p>
+
+    <div class="mt-8 text-sm text-ash dark:text-darkAsh">
+      Status: Active<br>
+      Domain: Automation Systems, Academic Infrastructure
+    </div>
+  </div>
+
+    <!-- ENTRY 2 -->
+    <div class="border-t border-line dark:border-darkLine py-16 reveal">
+      <h3 class="font-serif text-2xl mb-6">Drafting Systems</h3>
+      <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+        An engineering graphics and drafting automation system
+        built to translate structured technical problems into
+        precise visual outputs.
+        <br><br>
+        The initiative exists as a foundational research and
+        implementation layer for technical education automation.
+      </p>
+
+      <div class="mt-8 text-sm text-ash dark:text-darkAsh">
+        Status: In Development<br>
+        Domain: Engineering Automation
+      </div>
+    </div>
+
+    <!-- ENTRY 3 -->
+    <div class="border-t border-line dark:border-darkLine py-16 reveal">
+      <h3 class="font-serif text-2xl mb-6">Future Initiatives</h3>
+      <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+        Reserved classification for exploratory systems and
+        long-horizon research initiatives that align with
+        Sidhi’s governance and continuity principles.
+        <br><br>
+        Specific details remain undisclosed until structural
+        readiness is achieved.
+      </p>
+
+      <div class="mt-8 text-sm text-ash dark:text-darkAsh">
+        Status: Research<br>
+        Domain: Undisclosed
+      </div>
+    </div>
+
+  </section>
+
+  
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line dark:border-darkLine">
+    <div class="max-w-7xl mx-auto px-10 py-14 text-sm text-fog dark:text-darkFog">
+      © Sidhi. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.reveal, .zoom-img').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

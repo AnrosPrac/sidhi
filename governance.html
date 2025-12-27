@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Governance — Sidhi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- IBM Plex Serif (Headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Inter (Body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['IBM Plex Serif', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0a0d14',
+            fog: '#6b7280',
+            ash: '#374151',
+            line: '#e5e7eb',
+            paper: '#f9fafb',
+
+            darkInk: '#e5e7eb',
+            darkFog: '#9ca3af',
+            darkAsh: '#9ca3af',
+            darkLine: '#1f2937',
+            darkPaper: '#0a0d14',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Dark mode bootstrap -->
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-wrap {
+      overflow: hidden;
+    }
+    .zoom-img {
+      transform: scale(1.08);
+      transition: transform 2.8s ease;
+    }
+    .zoom-img.visible {
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
+
+  <!-- HEADER -->
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
+      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="governance.html">Governance</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="max-w-7xl mx-auto px-10 pt-52 pb-40">
+    <h1 class="font-serif text-5xl leading-tight reveal">
+      Governance Framework
+    </h1>
+
+    <p class="mt-16 text-xl max-w-4xl leading-relaxed reveal
+              text-ash dark:text-darkAsh">
+      Sidhi operates under a centralized governance framework designed
+      to preserve structural integrity, continuity, and decision discipline
+      across all initiatives governed by the entity.
+      <br><br>
+      Governance exists to prevent decay, not to accelerate action.
+    </p>
+  </section>
+
+  <!-- GOVERNANCE IMAGE -->
+  <section class="zoom-wrap">
+    <img src="assets/images/governance-hall.jpg"
+         class="w-full h-[90vh] object-cover grayscale zoom-img"
+         alt="Institutional governance chamber" />
+  </section>
+
+  <!-- AUTHORITY -->
+  <section class="max-w-7xl mx-auto px-10 py-44">
+    <h2 class="font-serif text-4xl mb-20 reveal">Authority Structure</h2>
+
+    <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
+      Final authority within Sidhi resides at the holding entity level.
+      Subsidiary initiatives operate autonomously within predefined
+      boundaries and are subject to periodic structural review.
+      <br><br>
+      No initiative is permitted to override governance standards
+      for the sake of speed, popularity, or external pressure.
+    </p>
+  </section>
+
+  <!-- DECISION PRINCIPLES -->
+  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+    <h2 class="font-serif text-4xl mb-24 reveal">
+      Decision Principles
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-28">
+      <ul class="space-y-10 text-fog dark:text-darkFog reveal">
+        <li>
+          <strong class="text-ink dark:text-darkInk">Structural integrity over velocity.</strong><br>
+          Decisions are evaluated for long-term correctness before execution.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Continuity over convenience.</strong><br>
+          Temporary ease does not justify long-term compromise.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Governance over consensus.</strong><br>
+          Alignment is enforced through structure, not opinion.
+        </li>
+      </ul>
+
+      <ul class="space-y-10 text-fog dark:text-darkFog reveal">
+        <li>
+          <strong class="text-ink dark:text-darkInk">Independence with accountability.</strong><br>
+          Autonomy exists only within defined limits.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Risk containment over expansion.</strong><br>
+          Growth is permitted only when failure modes are controlled.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Endurance as a metric.</strong><br>
+          Systems must remain functional under prolonged stress.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+    <h2 class="font-serif text-4xl mb-20 reveal">Review & Oversight</h2>
+
+    <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
+      Each governed initiative is subject to structured review
+      to assess alignment with governance principles, operational health,
+      and long-term viability.
+      <br><br>
+      Review outcomes may result in corrective mandates,
+      restructuring, suspension, or dissolution.
+    </p>
+  </section>
+
+  <!-- NON-NEGOTIABLES -->
+  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+    <h2 class="font-serif text-4xl mb-20 reveal">
+      Non-Negotiable Constraints
+    </h2>
+
+    <ul class="space-y-8 text-fog dark:text-darkFog max-w-4xl reveal">
+      <li>• No circumvention of governance processes</li>
+      <li>• No dependency on single individuals</li>
+      <li>• No reactionary structural changes</li>
+      <li>• No compromise on continuity safeguards</li>
+      <li>• No governance decisions driven by external pressure</li>
+    </ul>
+  </section>
+
+  <!-- EXECUTIVE STEWARDSHIP (CEO) -->
+ <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-24 reveal text-center">
+    Executive Stewardship
+  </h2>
+
+  <!-- CEO IMAGE -->
+  <div class="flex justify-center mb-10 reveal">
+    <img src="assets/images/arshad-azeez1.jpg"
+         alt="Arshad Azeez M"
+         class="w-32 h-32 rounded-full grayscale opacity-80 object-cover" />
+  </div>
+
+  <!-- CEO NAME & TITLE (POSITION PRESERVED, SPACING FIXED) -->
+  <p class="text-center text-sm text-ash dark:text-darkAsh reveal mb-16 leading-relaxed">
+    <strong class="text-base text-ink dark:text-darkInk">
+      Arshad Azeez M
+    </strong><br>
+    <span class="tracking-wide">
+      Founder & Chief Executive Officer, Sidhi
+    </span>
+  </p>
+
+  <!-- ROLE DESCRIPTION -->
+  <p class="text-fog dark:text-darkFog max-w-4xl mx-auto leading-relaxed reveal text-center md:text-left">
+    The Chief Executive Officer is responsible for executing
+    the governance mandate defined by the holding entity.
+    <br><br>
+    This role exists to ensure adherence to structural principles,
+    continuity requirements, and long-term decision discipline.
+    <br><br>
+    The Chief Executive Officer operates within the governance
+    framework and does not supersede it.
+  </p>
+</section>
+
+
+  <!-- CLOSING -->
+  <section class="max-w-7xl mx-auto px-10 py-52 border-t border-line dark:border-darkLine">
+    <p class="font-serif text-3xl max-w-5xl leading-relaxed reveal
+              text-ash dark:text-darkAsh">
+      Governance within Sidhi exists to ensure that systems
+      remain intact when ambition fades, leadership changes,
+      and conditions deteriorate.
+      <br><br>
+      It is the mechanism by which permanence is enforced.
+    </p>
+  </section>
+
+  <!-- PURPOSE OF GOVERNANCE (NEW) -->
+  <!-- [UNCHANGED — YOUR PREVIOUS ADDITIONS REMAIN EXACTLY AS-IS] -->
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line dark:border-darkLine">
+    <div class="max-w-7xl mx-auto px-10 py-14 text-sm text-fog dark:text-darkFog">
+      © Sidhi. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.reveal, .zoom-img').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

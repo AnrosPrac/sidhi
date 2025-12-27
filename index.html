@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidhi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- IBM Plex Serif (Headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Inter (Body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['IBM Plex Serif', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0a0d14',
+            fog: '#6b7280',
+            line: '#e5e7eb',
+            paper: '#f9fafb',
+
+            darkInk: '#e5e7eb',
+            darkFog: '#9ca3af',
+            darkLine: '#1f2937',
+            darkPaper: '#0a0d14',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Dark mode bootstrap -->
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-wrap {
+      overflow: hidden;
+    }
+    .zoom-img {
+      transform: scale(1.08);
+      transition: transform 2.5s ease;
+    }
+    .zoom-img.visible {
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
+
+  <!-- HEADER -->
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
+
+      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+
+      <div class="flex items-center gap-10">
+        <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="governance.html">Governance</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Dark mode toggle -->
+        <button onclick="toggleTheme()"
+          class="text-xs tracking-wide text-fog dark:text-darkFog">
+          MODE
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+ <section class="h-screen relative zoom-wrap">
+  <img src="assets/images/hero.jpg"
+       class="absolute inset-0 w-full h-full object-cover grayscale zoom-img"
+       alt="Institutional authority" />
+
+  <div class="absolute inset-0 bg-black/50 dark:bg-black/65"></div>
+
+  <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-10">
+    <h1 class="font-serif text-7xl text-white leading-tight reveal">
+      This entity<br>
+      was built to endure.
+    </h1>
+  </div>
+</section>
+
+<!-- DECLARATION -->
+<section class="max-w-7xl mx-auto px-10 py-44">
+  <p class="text-2xl max-w-4xl leading-[1.65] reveal
+            text-fog dark:text-darkFog">
+    Sidhi is a parent and holding entity established to govern,
+    protect, and preserve independent systems across technology
+    and education.
+    <br><br>
+    It does not exist to chase momentum, trends, or visibility.
+    It exists to ensure structural correctness across time.
+    <br><br>
+    Sidhi operates for endurance. Not acceleration.
+  </p>
+</section>
+
+<!-- MONUMENT IMAGE -->
+<section class="zoom-wrap">
+  <img src="assets/images/monument.jpg"
+       class="w-full h-[90vh] object-cover grayscale zoom-img"
+       alt="Monumental institutional architecture" />
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="max-w-7xl mx-auto px-10 py-44">
+  <h2 class="font-serif text-4xl mb-20 reveal">Philosophy</h2>
+
+  <div class="grid md:grid-cols-2 gap-28">
+    <p class="text-fog dark:text-darkFog leading-[1.7] reveal">
+      We assume resistance.
+      We assume rejection.
+      We assume indifference.
+      <br><br>
+      Systems built for approval collapse when approval disappears.
+      Therefore, Sidhi governs systems that do not depend on permission
+      to remain functional.
+    </p>
+
+    <p class="text-fog dark:text-darkFog leading-[1.7] reveal">
+      Sidhi removes fragility from ambition.
+      <br><br>
+      Every initiative governed by this entity must withstand pressure,
+      scrutiny, failure, and time — without structural compromise.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL STATEMENT -->
+<section class="max-w-7xl mx-auto px-10 py-52">
+  <p class="font-serif text-3xl max-w-5xl leading-[1.6] reveal
+            text-fog dark:text-darkFog">
+    Sidhi is not an experiment.
+    <br><br>
+    It is a permanent structure designed to remain intact
+    when relevance fades, individuals change, and cycles end.
+    <br><br>
+    This entity was built to last.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-line dark:border-darkLine">
+  <div class="max-w-7xl mx-auto px-10 py-14 text-sm flex items-center gap-4
+              text-fog dark:text-darkFog">
+    <img src="assets/images/sidhi-logo.jpeg"
+         alt="Sidhi"
+         class="h-7 opacity-60 grayscale invert dark:invert-0" />
+    <span>© Sidhi. All rights reserved.</span>
+  </div>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.reveal, .zoom-img').forEach(el => observer.observe(el));
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme',
+        html.classList.contains('dark') ? 'dark' : 'light'
+      );
+    }
+  </script>
+
+</body>
+</html>

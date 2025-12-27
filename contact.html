@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Sidhi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- IBM Plex Serif (Headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Inter (Body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['IBM Plex Serif', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0a0d14',
+            fog: '#6b7280',
+            ash: '#374151',
+            line: '#e5e7eb',
+            paper: '#f9fafb',
+
+            darkInk: '#e5e7eb',
+            darkFog: '#9ca3af',
+            darkAsh: '#9ca3af',
+            darkLine: '#1f2937',
+            darkPaper: '#0a0d14',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Dark mode bootstrap -->
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-wrap {
+      overflow: hidden;
+    }
+    .zoom-img {
+      transform: scale(1.08);
+      transition: transform 2.8s ease;
+    }
+    .zoom-img.visible {
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
+
+  <!-- HEADER -->
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
+      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="governance.html">Governance</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="max-w-7xl mx-auto px-10 pt-52 pb-40">
+  <h1 class="font-serif text-5xl leading-tight reveal">
+    Formal Communication
+  </h1>
+
+  <p class="mt-16 text-xl max-w-4xl leading-relaxed reveal
+            text-ash dark:text-darkAsh">
+    This page defines the official communication channels of Sidhi.
+    <br><br>
+    All correspondence directed to this entity is evaluated under
+    governance protocols, relevance thresholds, and long-term alignment.
+    <br><br>
+    Submission of a message does not imply obligation, engagement,
+    or guaranteed response.
+  </p>
+</section>
+
+<!-- IMAGE -->
+<section class="zoom-wrap">
+  <img src="assets/images/entrance.jpg"
+       class="w-full h-[90vh] object-cover grayscale zoom-img"
+       alt="Institutional entrance architecture" />
+</section>
+
+<!-- CONTACT DETAILS -->
+<section class="max-w-7xl mx-auto px-10 py-44">
+  <h2 class="font-serif text-4xl mb-20 reveal">
+    Official Channels
+  </h2>
+
+  <div class="space-y-12 text-fog dark:text-darkFog reveal">
+    <p>
+      <strong class="text-ink dark:text-darkInk">Primary Contact</strong><br>
+      contact@sidhigroup.com
+      <br><br>
+      This address serves as the sole formal point of communication
+      for all inquiries, submissions, and correspondence.
+    </p>
+
+    <p>
+      <strong class="text-ink dark:text-darkInk">Jurisdiction</strong><br>
+      India
+      <br><br>
+      Sidhi operates independently of regional representation and
+      does not maintain public-facing offices.
+    </p>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">
+    Communication Notice
+  </h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
+    Sidhi does not engage in unsolicited proposals, informal partnerships,
+    promotional outreach, or time-sensitive requests.
+    <br><br>
+    Communications that fall outside the entity’s governance scope,
+    ethical framework, or long-term objectives may not receive a response.
+    <br><br>
+    Repeated or misaligned communication may be permanently disregarded.
+  </p>
+</section>
+
+<!-- CLOSING -->
+<section class="max-w-7xl mx-auto px-10 py-52 border-t border-line dark:border-darkLine">
+  <p class="font-serif text-3xl max-w-5xl leading-relaxed reveal
+            text-ash dark:text-darkAsh">
+    This channel exists for necessity,
+    governance, and formal intent —
+    not convenience.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-line dark:border-darkLine">
+  <div class="max-w-7xl mx-auto px-10 py-14 text-sm text-fog dark:text-darkFog">
+    © Sidhi. All rights reserved.
+  </div>
+</footer>
+
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.reveal, .zoom-img').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

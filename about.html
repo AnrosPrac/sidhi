@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Sidhi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- IBM Plex Serif (Headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Inter (Body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['IBM Plex Serif', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0a0d14',
+            fog: '#6b7280',
+            ash: '#374151',
+            line: '#e5e7eb',
+            paper: '#f9fafb',
+
+            darkInk: '#e5e7eb',
+            darkFog: '#9ca3af',
+            darkAsh: '#9ca3af',
+            darkLine: '#1f2937',
+            darkPaper: '#0a0d14',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Dark mode bootstrap -->
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-wrap {
+      overflow: hidden;
+    }
+    .zoom-img {
+      transform: scale(1.08);
+      transition: transform 2.8s ease;
+    }
+    .zoom-img.visible {
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
+
+  <!-- HEADER -->
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
+      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="governance.html">Governance</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="max-w-7xl mx-auto px-10 pt-52 pb-40">
+    <h1 class="font-serif text-5xl leading-tight reveal">
+      Definition of the Entity
+    </h1>
+
+    <p class="mt-16 text-xl max-w-4xl leading-relaxed reveal
+              text-ash dark:text-darkAsh">
+      Sidhi is a parent and holding entity created to govern, preserve,
+      and sustain independent technology and education systems over
+      extended periods of time.
+      <br><br>
+      It does not exist to operate products.
+      It exists to ensure that systems remain structurally correct
+      regardless of leadership changes, market cycles, or external pressure.
+    </p>
+  </section>
+
+  <!-- IMAGE DIVIDER -->
+  <section class="zoom-wrap">
+    <img src="assets/images/archive.jpg"
+         class="w-full h-[90vh] object-cover grayscale zoom-img"
+         alt="Institutional archive interior" />
+  </section>
+
+  <!-- PURPOSE -->
+  <section class="max-w-7xl mx-auto px-10 py-44">
+    <h2 class="font-serif text-4xl mb-20 reveal">Purpose</h2>
+
+    <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
+      Sidhi was formed with the assumption that most systems fail
+      not because they lack talent or ambition, but because they
+      are built without structural discipline.
+      <br><br>
+      The entity exists to remove fragility from long-term initiatives
+      by enforcing governance, continuity, and decision-making frameworks
+      that are not influenced by urgency or popularity.
+    </p>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+    <h2 class="font-serif text-4xl mb-24 reveal">Foundational Principles</h2>
+
+    <div class="grid md:grid-cols-2 gap-28">
+      <ul class="space-y-10 text-fog dark:text-darkFog reveal">
+        <li>
+          <strong class="text-ink dark:text-darkInk">Endurance over growth.</strong><br>
+          Systems must remain functional under stress before they scale.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Structure over speed.</strong><br>
+          Decisions are evaluated for long-term integrity, not velocity.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Governance over control.</strong><br>
+          Autonomy exists within clearly defined boundaries.
+        </li>
+      </ul>
+
+      <ul class="space-y-10 text-fog dark:text-darkFog reveal">
+        <li>
+          <strong class="text-ink dark:text-darkInk">Continuity over individuals.</strong><br>
+          No system is allowed to depend on a single person.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Discipline over visibility.</strong><br>
+          Attention is not treated as a success metric.
+        </li>
+        <li>
+          <strong class="text-ink dark:text-darkInk">Longevity over relevance.</strong><br>
+          Temporary relevance is considered a weak objective.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT WE ARE NOT -->
+  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+    <h2 class="font-serif text-4xl mb-20 reveal">What This Entity Is Not</h2>
+
+    <ul class="space-y-8 text-fog dark:text-darkFog max-w-4xl reveal">
+      <li>• Not a startup accelerator</li>
+      <li>• Not a services company</li>
+      <li>• Not a content publisher</li>
+      <li>• Not driven by short-term outcomes</li>
+      <li>• Not dependent on public approval</li>
+    </ul>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="max-w-7xl mx-auto px-10 py-52 border-t border-line dark:border-darkLine">
+    <p class="font-serif text-3xl max-w-5xl leading-relaxed reveal
+              text-ash dark:text-darkAsh">
+      Sidhi exists to hold responsibility when momentum disappears,
+      leadership changes, and conditions become unfavorable.
+      <br><br>
+      It is designed to remain.
+    </p>
+  </section>
+  <section class="max-w-7xl mx-auto px-10 py-44">
+  <p class="text-xl max-w-4xl leading-relaxed text-ash dark:text-darkAsh">
+    Sidhi is not a product company, a services firm, or a time-bound organization.
+    It is a parent entity designed to hold, govern, and preserve multiple
+    independent systems across technology, education, and future domains yet
+    to be formalized.
+    <br><br>
+    Sidhi was conceived before any subsidiary existed. Its purpose was defined
+    prior to execution, not as a reaction to success or failure. Every company
+    under Sidhi exists because Sidhi exists — not the other way around.
+    <br><br>
+    This entity was created to function independently of trends, funding cycles,
+    popularity, or external validation. Sidhi is structured to remain operational
+    regardless of market shifts, leadership transitions, or temporary setbacks
+    within its subsidiaries.
+    <br><br>
+    It does not seek acceleration. It seeks correctness.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">Purpose</h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+    Sidhi exists to solve a structural problem rather than a market problem.
+    <br><br>
+    Most organizations fail not because they lack intelligence, resources,
+    or ambition, but because they are constructed without long-term governance
+    discipline. They are built to move fast, raise capital, exit, or respond
+    to external pressure.
+    <br><br>
+    Sidhi was formed to eliminate those failure modes.
+    <br><br>
+    The purpose of Sidhi is to act as a permanent decision layer — absorbing
+    risk, pressure, and responsibility so that subsidiaries can focus on
+    execution without compromising integrity.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">
+    Governance Scope
+  </h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
+    Sidhi consolidates ownership, capital flow, strategic direction, and
+    external dealings across all its governed entities. This ensures
+    consistency in ethics, decision quality, and long-term alignment.
+    <br><br>
+    Sidhi does not exist to interfere in daily execution.
+    It exists to intervene only when structural thresholds are breached.
+    <br><br>
+    Growth is permitted only after endurance is demonstrated.
+    Visibility is treated as a byproduct, not a goal.
+    Speed remains subordinate to structure.
+  </p>
+</section>
+
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">Subsidiary Relationship Model</h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+    All subsidiaries under Sidhi are fully owned by the parent entity.
+    They operate with operational autonomy while remaining bound by
+    Sidhi’s governance, financial consolidation, and strategic oversight.
+    <br><br>
+    Revenue generated by subsidiaries ultimately flows into Sidhi, which
+    determines allocation, reinvestment, and long-term planning.
+    <br><br>
+    Sidhi retains authority to intervene during crises, restructure leadership,
+    or redirect strategy — while allowing internal teams to resolve issues
+    independently whenever possible.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">Purpose</h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+    Sidhi exists to solve a structural problem rather than a market problem.
+    <br><br>
+    Most organizations fail not because they lack intelligence, resources,
+    or ambition, but because they are constructed without long-term governance
+    discipline. They are built to move fast, raise capital, exit, or respond
+    to external pressure.
+    <br><br>
+    Sidhi was formed to eliminate those failure modes.
+    <br><br>
+    The purpose of Sidhi is to act as a permanent decision layer — absorbing
+    risk, pressure, and responsibility so that subsidiaries can focus on
+    execution without compromising integrity.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">Capital and Independence</h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+    Sidhi operates without external investors, political affiliations,
+    or religious alignments.
+    <br><br>
+    This policy exists to prevent governance dilution, external pressure,
+    and short-term return expectations that conflict with long-horizon
+    system building.
+    <br><br>
+    Financial independence is treated as a prerequisite for ethical
+    consistency and decision integrity across all governed entities.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">Leadership Context</h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed">
+    Sidhi is a founder-led entity.
+    <br><br>
+    Its current leadership rests with its founder and Chief Executive Officer,
+    who defined the entity’s philosophy, authority structure, and long-term
+    vision.
+    <br><br>
+    Succession, leadership transfer, and governance evolution remain
+    deliberate internal decisions to preserve intent, ethics, and continuity.
+    Sidhi’s authority does not dilute over time.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-52 border-t border-line dark:border-darkLine">
+  <p class="font-serif text-3xl max-w-5xl leading-relaxed text-ash dark:text-darkAsh">
+    Sidhi was not created to be impressive.
+    <br><br>
+    It was created to remain.
+    <br><br>
+    When momentum fades, when interest declines, and when conditions become
+    hostile, Sidhi continues to operate — not through adaptation to noise,
+    but through adherence to structure.
+    <br><br>
+    This entity exists to hold responsibility indefinitely.
+  </p>
+</section>
+<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <h2 class="font-serif text-4xl mb-20 reveal">
+    Founder Context
+  </h2>
+
+  <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
+    Sidhi was founded and architected by Arshad Azeez M.
+    <br><br>
+    The entity was not created as a consequence of market opportunity,
+    product success, or external influence. It was defined independently,
+    prior to the formation of any subsidiary, with the explicit intent
+    of building a permanent governance and ownership structure.
+    <br><br>
+    The founder’s role is not positioned above the entity.
+    Authority is exercised through Sidhi’s defined frameworks,
+    not personal discretion.
+    <br><br>
+    Leadership, succession, and long-term stewardship remain
+    internal decisions governed by continuity, responsibility,
+    and structural integrity rather than visibility or popularity.
+  </p>
+</section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line dark:border-darkLine">
+    <div class="max-w-7xl mx-auto px-10 py-14 text-sm text-fog dark:text-darkFog">
+      © Sidhi. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ANIMATION SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.reveal, .zoom-img').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
