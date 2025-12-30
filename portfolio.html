@@ -79,18 +79,34 @@
 <body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
 
   <!-- HEADER -->
-  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
-    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
-      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+ <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 py-6 md:py-8 flex justify-between items-center">
+
+    <span class="tracking-[0.35em] text-sm font-bold">SIDHI</span>
+
+    <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden text-xs font-bold tracking-widest">MENU</button>
+
+    <div class="hidden md:flex items-center gap-10">
       <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="governance.html">Governance</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Home</a>
+        <a href="about.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">About</a>
+        <a href="portfolio.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Portfolio</a>
+        <a href="governance.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Governance</a>
+        <a href="contact.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Contact</a>
       </nav>
+      <button onclick="toggleTheme()" class="text-xs tracking-wide text-fog dark:text-darkFog">MODE</button>
     </div>
-  </header>
+  </div>
+
+  <div id="mobile-nav" class="hidden md:hidden bg-paper dark:bg-darkPaper border-b border-line dark:border-darkLine px-6 py-6 flex flex-col gap-4 text-sm tracking-widest text-center">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO</a>
+    <a href="governance.html">GOVERNANCE</a>
+    <a href="contact.html">CONTACT</a>
+    <button onclick="toggleTheme()" class="pt-4 border-t border-line dark:border-darkLine">TOGGLE MODE</button>
+  </div>
+</header>
 
   <!-- INTRO -->
   <section class="max-w-7xl mx-auto px-10 pt-52 pb-40">

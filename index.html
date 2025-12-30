@@ -18,6 +18,63 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sidhi.xyz/#organization",
+      "name": "Sidhi",
+      "url": "https://sidhi.xyz",
+      "logo": "https://sidhi.xyz/logo.jpeg",
+      "founder": {
+        "@id": "https://ceo.sidhi.xyz/#person"
+      },
+      "description": "A digital governing entity building scalable, deterministic solutions for institutional automation and engineering education.",
+      "subOrganization": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://lumetrix.sidhi.xyz/#software",
+          "name": "Lumetrix"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://engdraft.sidhi.xyz/#software",
+          "name": "EngDraft"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ceo.sidhi.xyz/#person",
+      "name": "Arshad Azeez M",
+      "url": "https://ceo.sidhi.xyz/",
+      "jobTitle": "Founder and CEO",
+      "affiliation": {
+        "@id": "https://sidhi.xyz/#organization"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/arshad-azeez-m"
+      ]
+    },
+    {
+        "@type": "WebSite",
+        "@id": "https://sidhi.xyz/#website",
+        "url": "https://sidhi.xyz",
+        "name": "Sidhi",
+        "publisher": {
+            "@id": "https://sidhi.xyz/#organization"
+        }
+    }
+  ]
+}
+</script>
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -78,28 +135,33 @@
 
   <!-- HEADER -->
   <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
-    <div class="max-w-7xl mx-auto px-10 py-8 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 py-6 md:py-8 flex justify-between items-center">
 
-      <span class="tracking-[0.35em] text-sm font-medium">SIDHI</span>
+    <span class="tracking-[0.35em] text-sm font-bold">SIDHI</span>
 
-      <div class="flex items-center gap-10">
-        <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="governance.html">Governance</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+    <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden text-xs font-bold tracking-widest">MENU</button>
 
-        <!-- Dark mode toggle -->
-        <button onclick="toggleTheme()"
-          class="text-xs tracking-wide text-fog dark:text-darkFog">
-          MODE
-        </button>
-      </div>
-
+    <div class="hidden md:flex items-center gap-10">
+      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+        <a href="index.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Home</a>
+        <a href="about.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">About</a>
+        <a href="portfolio.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Portfolio</a>
+        <a href="governance.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Governance</a>
+        <a href="contact.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Contact</a>
+      </nav>
+      <button onclick="toggleTheme()" class="text-xs tracking-wide text-fog dark:text-darkFog">MODE</button>
     </div>
-  </header>
+  </div>
+
+  <div id="mobile-nav" class="hidden md:hidden bg-paper dark:bg-darkPaper border-b border-line dark:border-darkLine px-6 py-6 flex flex-col gap-4 text-sm tracking-widest text-center">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="portfolio.html">PORTFOLIO</a>
+    <a href="governance.html">GOVERNANCE</a>
+    <a href="contact.html">CONTACT</a>
+    <button onclick="toggleTheme()" class="pt-4 border-t border-line dark:border-darkLine">TOGGLE MODE</button>
+  </div>
+</header>
 
   <!-- HERO -->
  <section class="h-screen relative zoom-wrap">
@@ -110,7 +172,7 @@
   <div class="absolute inset-0 bg-black/50 dark:bg-black/65"></div>
 
   <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-10">
-    <h1 class="font-serif text-7xl text-white leading-tight reveal">
+    <h1 class="font-serif text-4xl md:text-7xl text-white leading-tight reveal">
       This entity<br>
       was built to endure.
     </h1>
@@ -180,9 +242,7 @@
 <footer class="border-t border-line dark:border-darkLine">
   <div class="max-w-7xl mx-auto px-10 py-14 text-sm flex items-center gap-4
               text-fog dark:text-darkFog">
-    <img src="assets/images/sidhi-logo.jpeg"
-         alt="Sidhi"
-         class="h-7 opacity-60 grayscale invert dark:invert-0" />
+    
     <span>© Sidhi. All rights reserved.</span>
   </div>
 </footer>
