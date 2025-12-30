@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidhi</title>
+  <title>Sidhi Labs</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
     {
       "@type": "Organization",
       "@id": "https://sidhi.xyz/#organization",
-      "name": "Sidhi",
+      "name": "Sidhi Labs",
       "url": "https://sidhi.xyz",
       "logo": "https://sidhi.xyz/logo.jpeg",
       "founder": {
@@ -33,17 +33,35 @@
       },
       "description": "A digital governing entity building scalable, deterministic solutions for institutional automation and engineering education.",
       "subOrganization": [
-        {
-          "@type": "SoftwareApplication",
-          "@id": "https://lumetrix.sidhi.xyz/#software",
-          "name": "Lumetrix"
-        },
-        {
-          "@type": "SoftwareApplication",
-          "@id": "https://engdraft.sidhi.xyz/#software",
-          "name": "EngDraft"
-        }
-      ],
+  {
+    "@type": "SoftwareApplication",
+    "@id": "https://lumetrix.sidhi.xyz/#software",
+    "name": "Lumetrix",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "description": "Institutional licensing available on request",
+      "availability": "https://schema.org/PreOrder"
+    }
+  },
+  {
+    "@type": "SoftwareApplication",
+    "@id": "https://engdraft.sidhi.xyz/#software",
+    "name": "EngDraft",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "description": "Professional engineering drafting modules",
+      "availability": "https://schema.org/PreOrder"
+    }
+  }
+],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "India"
@@ -55,7 +73,7 @@
       "name": "Arshad Azeez M",
       "url": "https://ceo.sidhi.xyz/",
       "jobTitle": "Founder and CEO",
-      "affiliation": {
+      "worksFor": {
         "@id": "https://sidhi.xyz/#organization"
       },
       "sameAs": [
@@ -66,7 +84,7 @@
         "@type": "WebSite",
         "@id": "https://sidhi.xyz/#website",
         "url": "https://sidhi.xyz",
-        "name": "Sidhi",
+        "name": "Sidhi Labs",
         "publisher": {
             "@id": "https://sidhi.xyz/#organization"
         }
@@ -183,7 +201,7 @@
 <section class="max-w-7xl mx-auto px-10 py-44">
   <p class="text-2xl max-w-4xl leading-[1.65] reveal
             text-fog dark:text-darkFog">
-    Sidhi is a parent and holding entity established to govern,
+    Sidhi Labs is a parent and holding entity established to govern,
     protect, and preserve independent systems across technology
     and education.
     <br><br>
@@ -217,7 +235,7 @@
     </p>
 
     <p class="text-fog dark:text-darkFog leading-[1.7] reveal">
-      Sidhi removes fragility from ambition.
+      Sidhi Labs removes fragility from ambition.
       <br><br>
       Every initiative governed by this entity must withstand pressure,
       scrutiny, failure, and time — without structural compromise.
@@ -229,7 +247,7 @@
 <section class="max-w-7xl mx-auto px-10 py-52">
   <p class="font-serif text-3xl max-w-5xl leading-[1.6] reveal
             text-fog dark:text-darkFog">
-    Sidhi is not an experiment.
+    Sidhi Labs is not an experiment.
     <br><br>
     It is a permanent structure designed to remain intact
     when relevance fades, individuals change, and cycles end.
@@ -243,7 +261,7 @@
   <div class="max-w-7xl mx-auto px-10 py-14 text-sm flex items-center gap-4
               text-fog dark:text-darkFog">
     
-    <span>© Sidhi. All rights reserved.</span>
+    <span>© Sidhi Labs. All rights reserved.</span>
   </div>
 </footer>
 
