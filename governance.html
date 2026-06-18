@@ -4,16 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Governance — SidhiLynx</title>
+  <meta name="description" content="How SidhiLynx governs the Lumetrix product line — one standard for quality across Play, Labs, and Learn." />
+  <link rel="canonical" href="https://sidhi.xyz/governance.html" />
 
-  <!-- Fonts -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SidhiLynx" />
+  <meta property="og:title" content="Governance — SidhiLynx" />
+  <meta property="og:description" content="How SidhiLynx governs the Lumetrix product line — one standard for quality across Play, Labs, and Learn." />
+  <meta property="og:url" content="https://sidhi.xyz/governance.html" />
+  <meta property="og:image" content="https://sidhi.xyz/logo.jpeg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Governance — SidhiLynx" />
+  <meta name="twitter:description" content="How SidhiLynx governs the Lumetrix product line — one standard for quality across Play, Labs, and Learn." />
+  <meta name="twitter:image" content="https://sidhi.xyz/logo.jpeg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- IBM Plex Serif (Headings) -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Inter (Body) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- Basic favicon -->
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -41,19 +53,20 @@
           fontFamily: {
             serif: ['IBM Plex Serif', 'serif'],
             sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
           },
           colors: {
-            ink: '#0a0d14',
+            ink: '#0a0a0a',
             fog: '#6b7280',
             ash: '#374151',
             line: '#e5e7eb',
-            paper: '#f9fafb',
+            paper: '#fafafa',
 
-            darkInk: '#e5e7eb',
+            darkInk: '#f2f2f2',
             darkFog: '#9ca3af',
             darkAsh: '#9ca3af',
             darkLine: '#1f2937',
-            darkPaper: '#0a0d14',
+            darkPaper: '#0a0a0a',
           }
         }
       }
@@ -63,7 +76,7 @@
   <!-- Dark mode bootstrap -->
   <script>
     const theme = localStorage.getItem('theme');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (theme !== 'light') {
       document.documentElement.classList.add('dark');
     }
   </script>
@@ -72,21 +85,17 @@
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 1.4s ease, transform 1.4s ease;
+      transition: opacity 1.2s ease, transform 1.2s ease;
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .zoom-wrap {
-      overflow: hidden;
-    }
-    .zoom-img {
-      transform: scale(1.08);
-      transition: transform 2.8s ease;
-    }
-    .zoom-img.visible {
-      transform: scale(1);
+    .reveal-delay-1.visible { transition-delay: .12s; }
+    .weave-divider {
+      width: 100%;
+      height: 10rem;
+      display: block;
     }
   </style>
 </head>
@@ -94,7 +103,7 @@
 <body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
 
   <!-- HEADER -->
-  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper/90 dark:bg-darkPaper/90 backdrop-blur z-50">
   <div class="max-w-7xl mx-auto px-4 md:px-10 py-6 md:py-8 flex justify-between items-center">
 
     <span class="tracking-[0.35em] text-sm font-bold">SIDHILYNX</span>
@@ -102,11 +111,12 @@
     <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden text-xs font-bold tracking-widest">MENU</button>
 
     <div class="hidden md:flex items-center gap-10">
-      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
+      <nav class="space-x-10 text-sm text-fog dark:text-darkFog">
         <a href="index.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Home</a>
         <a href="about.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">About</a>
         <a href="portfolio.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Portfolio</a>
-        <a href="governance.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Governance</a>
+        <a href="governance.html" class="text-ink dark:text-darkInk transition-colors">Governance</a>
+        <a href="careers.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Careers</a>
         <a href="contact.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Contact</a>
       </nav>
       <button onclick="toggleTheme()" class="text-xs tracking-wide text-fog dark:text-darkFog">MODE</button>
@@ -118,174 +128,98 @@
     <a href="about.html">ABOUT</a>
     <a href="portfolio.html">PORTFOLIO</a>
     <a href="governance.html">GOVERNANCE</a>
+    <a href="careers.html">CAREERS</a>
     <a href="contact.html">CONTACT</a>
     <button onclick="toggleTheme()" class="pt-4 border-t border-line dark:border-darkLine">TOGGLE MODE</button>
   </div>
 </header>
 
   <!-- INTRO -->
-  <section class="max-w-7xl mx-auto px-10 pt-52 pb-40">
-    <h1 class="font-serif text-5xl leading-tight reveal">
-      Governance Framework
+  <section class="max-w-7xl mx-auto px-6 md:px-10 pt-52 pb-32">
+    <p class="font-mono text-xs tracking-[0.3em] text-fog dark:text-darkFog mb-8 reveal">GOVERNANCE</p>
+    <h1 class="font-serif text-5xl md:text-7xl leading-[1.0] reveal">
+      One company.<br>Three products, one standard.
     </h1>
 
-    <p class="mt-16 text-xl max-w-4xl leading-relaxed reveal
+    <p class="mt-16 text-xl max-w-3xl leading-relaxed reveal reveal-delay-1
               text-ash dark:text-darkAsh">
-      SidhiLynx operates under a centralized governance framework designed
-      to preserve structural integrity, continuity, and decision discipline
-      across all initiatives governed by the entity.
-      <br><br>
-      Governance exists to prevent decay, not to accelerate action.
+      SidhiLynx sets the bar every Lumetrix product has to clear. Each one
+      runs independently day to day — but none of them ship until they meet
+      the same standard for quality and reliability.
     </p>
   </section>
 
-  <!-- GOVERNANCE IMAGE -->
-  <section class="zoom-wrap">
-    <img src="assets/images/governance-hall.jpg"
-         class="w-full h-[90vh] object-cover grayscale zoom-img"
-         alt="Institutional governance chamber" />
-  </section>
-
-  <!-- AUTHORITY -->
-  <section class="max-w-7xl mx-auto px-10 py-44">
-    <h2 class="font-serif text-4xl mb-20 reveal">Authority Structure</h2>
-
-    <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
-      Final authority within SidhiLynx resides at the holding entity level.
-      Subsidiary initiatives operate autonomously within predefined
-      boundaries and are subject to periodic structural review.
-      <br><br>
-      No initiative is permitted to override governance standards
-      for the sake of speed, popularity, or external pressure.
-    </p>
+  <!-- WEAVE DIVIDER -->
+  <section class="border-y border-line dark:border-darkLine">
+    <svg viewBox="0 0 1200 200" class="weave-divider text-ink dark:text-darkInk opacity-80" preserveAspectRatio="none">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M0,40 C150,40 150,160 300,160 C450,160 450,40 600,40 C750,40 750,160 900,160 C1050,160 1050,40 1200,40" opacity="0.9"/>
+        <path d="M0,70 C150,70 150,130 300,130 C450,130 450,70 600,70 C750,70 750,130 900,130 C1050,130 1050,70 1200,70" opacity="0.55"/>
+        <path d="M0,100 C150,100 150,100 300,100 C450,100 450,100 600,100 C750,100 750,100 900,100 C1050,100 1050,100 1200,100" opacity="0.3"/>
+      </g>
+    </svg>
   </section>
 
   <!-- DECISION PRINCIPLES -->
-  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
+  <section class="max-w-7xl mx-auto px-6 md:px-10 py-44">
     <h2 class="font-serif text-4xl mb-24 reveal">
       Decision Principles
     </h2>
 
-    <div class="grid md:grid-cols-2 gap-28">
-      <ul class="space-y-10 text-fog dark:text-darkFog reveal">
-        <li>
-          <strong class="text-ink dark:text-darkInk">Structural integrity over velocity.</strong><br>
-          Decisions are evaluated for long-term correctness before execution.
-        </li>
-        <li>
-          <strong class="text-ink dark:text-darkInk">Continuity over convenience.</strong><br>
-          Temporary ease does not justify long-term compromise.
-        </li>
-        <li>
-          <strong class="text-ink dark:text-darkInk">Governance over consensus.</strong><br>
-          Alignment is enforced through structure, not opinion.
-        </li>
-      </ul>
-
-      <ul class="space-y-10 text-fog dark:text-darkFog reveal">
-        <li>
-          <strong class="text-ink dark:text-darkInk">Independence with accountability.</strong><br>
-          Autonomy exists only within defined limits.
-        </li>
-        <li>
-          <strong class="text-ink dark:text-darkInk">Risk containment over expansion.</strong><br>
-          Growth is permitted only when failure modes are controlled.
-        </li>
-        <li>
-          <strong class="text-ink dark:text-darkInk">Endurance as a metric.</strong><br>
-          Systems must remain functional under prolonged stress.
-        </li>
-      </ul>
+    <div class="grid md:grid-cols-2 gap-x-28 gap-y-12">
+      <div class="reveal">
+        <p class="text-ink dark:text-darkInk font-medium text-lg mb-2">Structural integrity over velocity.</p>
+        <p class="text-fog dark:text-darkFog leading-relaxed">Decisions are evaluated for long-term correctness before execution.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="text-ink dark:text-darkInk font-medium text-lg mb-2">Independence with accountability.</p>
+        <p class="text-fog dark:text-darkFog leading-relaxed">Each product operates autonomously within defined limits.</p>
+      </div>
+      <div class="reveal">
+        <p class="text-ink dark:text-darkInk font-medium text-lg mb-2">Beta until proven.</p>
+        <p class="text-fog dark:text-darkFog leading-relaxed">Nothing under SidhiLynx ships to general availability before it has survived real institutional use.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="text-ink dark:text-darkInk font-medium text-lg mb-2">Risk containment over expansion.</p>
+        <p class="text-fog dark:text-darkFog leading-relaxed">Growth is permitted only when failure modes are understood and controlled.</p>
+      </div>
     </div>
   </section>
 
-  <!-- REVIEW -->
-  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
-    <h2 class="font-serif text-4xl mb-20 reveal">Review & Oversight</h2>
-
-    <p class="text-fog dark:text-darkFog max-w-4xl leading-relaxed reveal">
-      Each governed initiative is subject to structured review
-      to assess alignment with governance principles, operational health,
-      and long-term viability.
-      <br><br>
-      Review outcomes may result in corrective mandates,
-      restructuring, suspension, or dissolution.
-    </p>
+  <!-- LEADERSHIP -->
+  <section class="max-w-7xl mx-auto px-6 md:px-10 py-32 border-t border-line dark:border-darkLine">
+    <p class="font-mono text-xs tracking-[0.3em] text-fog dark:text-darkFog mb-10 reveal">LEADERSHIP</p>
+    <div class="flex items-center gap-6 reveal">
+      <a href="https://ceo.sidhi.xyz/" class="block overflow-hidden rounded-full">
+        <img src="assets/images/arshad-azeez1.jpg"
+             alt="Arshad Azeez M"
+             class="w-16 h-16 grayscale object-cover" />
+      </a>
+      <div>
+        <p class="font-serif text-xl">Arshad Azeez M</p>
+        <p class="text-sm text-fog dark:text-darkFog">Founder &amp; CEO — <a href="https://ceo.sidhi.xyz" class="underline hover:opacity-60 transition-opacity">ceo.sidhi.xyz</a></p>
+      </div>
+    </div>
   </section>
-
-  <!-- NON-NEGOTIABLES -->
-  <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
-    <h2 class="font-serif text-4xl mb-20 reveal">
-      Non-Negotiable Constraints
-    </h2>
-
-    <ul class="space-y-8 text-fog dark:text-darkFog max-w-4xl reveal">
-      <li>• No circumvention of governance processes</li>
-      <li>• No dependency on single individuals</li>
-      <li>• No reactionary structural changes</li>
-      <li>• No compromise on continuity safeguards</li>
-      <li>• No governance decisions driven by external pressure</li>
-    </ul>
-  </section>
-
-  <!-- EXECUTIVE STEWARDSHIP (CEO) -->
- <section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
-  <h2 class="font-serif text-4xl mb-24 reveal text-center">
-    Executive Stewardship
-  </h2>
-
-  <!-- CEO IMAGE -->
- <div class="flex justify-center mb-10 reveal group">
-  <a href="https://ceo.sidhi.xyz/" class="block overflow-hidden rounded-full">
-    <img src="assets/images/arshad-azeez1.jpg"
-         alt="Arshad Azeez M"
-         class="w-32 h-32 grayscale opacity-80 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-100" />
-  </a>
-</div>
-
-  <!-- CEO NAME & TITLE (POSITION PRESERVED, SPACING FIXED) -->
-  <p class="text-center text-sm text-ash dark:text-darkAsh reveal mb-16 leading-relaxed">
-    <strong class="text-base text-ink dark:text-darkInk">
-      Arshad Azeez M
-    </strong><br>
-    <span class="tracking-wide">
-      Founder & Chief Executive Officer, SidhiLynx
-    </span>
-  </p>
-
-  <!-- ROLE DESCRIPTION -->
-  <p class="text-fog dark:text-darkFog max-w-4xl mx-auto leading-relaxed reveal text-center md:text-left">
-    The Chief Executive Officer is responsible for executing
-    the governance mandate defined by the holding entity.
-    <br><br>
-    This role exists to ensure adherence to structural principles,
-    continuity requirements, and long-term decision discipline.
-    <br><br>
-    The Chief Executive Officer operates within the governance
-    framework and does not supersede it.
-  </p>
-</section>
-
 
   <!-- CLOSING -->
-  <section class="max-w-7xl mx-auto px-10 py-52 border-t border-line dark:border-darkLine">
-    <p class="font-serif text-3xl max-w-5xl leading-relaxed reveal
-              text-ash dark:text-darkAsh">
-      Governance within SidhiLynx exists to ensure that systems
-      remain intact when ambition fades, leadership changes,
-      and conditions deteriorate.
-      <br><br>
-      It is the mechanism by which permanence is enforced.
+  <section class="max-w-7xl mx-auto px-6 md:px-10 py-52 border-t border-line dark:border-darkLine">
+    <p class="font-serif text-3xl md:text-4xl max-w-4xl leading-[1.4] reveal">
+      Governance here isn't paperwork. It's why a product that works today
+      still works in five years.
     </p>
   </section>
-
-  <!-- PURPOSE OF GOVERNANCE (NEW) -->
-  <!-- [UNCHANGED — YOUR PREVIOUS ADDITIONS REMAIN EXACTLY AS-IS] -->
 
   <!-- FOOTER -->
   <footer class="border-t border-line dark:border-darkLine">
-    <div class="max-w-7xl mx-auto px-10 py-14 text-sm text-fog dark:text-darkFog">
-      © SidhiLynx. All rights reserved.
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-14 text-sm flex flex-wrap items-center justify-between gap-4
+                text-fog dark:text-darkFog">
+      <span>© SidhiLynx. All rights reserved.</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/company/sidhilynx" class="hover:text-ink dark:hover:text-darkInk transition-colors">LinkedIn</a>
+        <a href="https://www.instagram.com/sidhilynx/" class="hover:text-ink dark:hover:text-darkInk transition-colors">Instagram</a>
+        <a href="https://www.youtube.com/@Sidhilynx" class="hover:text-ink dark:hover:text-darkInk transition-colors">YouTube</a>
+      </div>
     </div>
   </footer>
 
@@ -299,9 +233,17 @@
       });
     }, { threshold: 0.25 });
 
-    document.querySelectorAll('.reveal, .zoom-img').forEach(el => {
+    document.querySelectorAll('.reveal').forEach(el => {
       observer.observe(el);
     });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme',
+        html.classList.contains('dark') ? 'dark' : 'light'
+      );
+    }
   </script>
 
 </body>

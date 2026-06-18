@@ -3,17 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SidhiLynx</title>
+  <title>SidhiLynx — Lumetrix Play, Learn &amp; Labs</title>
+  <meta name="description" content="SidhiLynx builds Lumetrix Play, Learn, and Labs — software that removes the manual work from teaching and learning." />
+  <link rel="canonical" href="https://sidhi.xyz/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SidhiLynx" />
+  <meta property="og:title" content="SidhiLynx — Lumetrix Play, Learn & Labs" />
+  <meta property="og:description" content="SidhiLynx builds Lumetrix Play, Learn, and Labs — software that removes the manual work from teaching and learning." />
+  <meta property="og:url" content="https://sidhi.xyz/" />
+  <meta property="og:image" content="https://sidhi.xyz/logo.jpeg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SidhiLynx — Lumetrix Play, Learn & Labs" />
+  <meta name="twitter:description" content="SidhiLynx builds Lumetrix Play, Learn, and Labs — software that removes the manual work from teaching and learning." />
+  <meta name="twitter:image" content="https://sidhi.xyz/logo.jpeg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- IBM Plex Serif (Headings) -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- IBM Plex Serif (Headings) + IBM Plex Mono (labels) -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Inter (Body) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,46 +60,34 @@
       "url": "https://sidhi.xyz",
       "logo": "https://sidhi.xyz/logo.jpeg",
       "sameAs": [
-       "https://www.linkedin.com/company/111222301/",
+       "https://www.linkedin.com/company/sidhilynx",
+        "https://www.instagram.com/sidhilynx/",
+        "https://www.youtube.com/@Sidhilynx",
         "https://www.wikidata.org/wiki/Q137646440",
         "https://www.crunchbase.com/organization/sidhilynx"
       ],
       "founder": {
         "@id": "https://ceo.sidhi.xyz/#person"
       },
-      "description": "A digital governing entity building scalable, deterministic solutions for institutional automation and engineering education.",
+      "description": "Technology company building Lumetrix Play, Lumetrix Learn, and Lumetrix Labs, along with other engineering and education platforms.",
       "subOrganization": [
-  {
-    "@type": "SoftwareApplication",
-    "@id": "https://lumetrixlearn.sidhi.xyz/#software",
-    "name": "Lumetrix Learn",
-    "url": "https://lumetrixlearn.sidhi.xyz/",
-    "applicationCategory": "EducationApplication",
-    "operatingSystem": "Web Browser",
-    "description": "A coding practice and skill-proof platform for engineering students. Earn verifiable certificates, build a live portfolio, and practice software and hardware programming languages.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR",
-      "description": "Free to start. Institutional licensing available on request.",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@type": "SoftwareApplication",
-    "@id": "https://engdraft.sidhi.xyz/#software",
-    "name": "EngDraft",
-    "applicationCategory": "EducationApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR",
-      "description": "Professional engineering drafting modules",
-      "availability": "https://schema.org/PreOrder"
-    }
-  }
-],
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://play.lumetrix.sidhi.xyz/#software",
+          "name": "Lumetrix Play",
+          "url": "https://play.lumetrix.sidhi.xyz/",
+          "applicationCategory": "EducationApplication",
+          "operatingSystem": "Web Browser",
+          "description": "Turns any programming course or YouTube tutorial into a personalized, gamified learning journey with adaptive challenges, XP progression, and shareable achievement cards.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR",
+            "description": "Free to use.",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "India"
@@ -126,17 +130,18 @@
           fontFamily: {
             serif: ['IBM Plex Serif', 'serif'],
             sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
           },
           colors: {
-            ink: '#0a0d14',
+            ink: '#0a0a0a',
             fog: '#6b7280',
             line: '#e5e7eb',
-            paper: '#f9fafb',
+            paper: '#fafafa',
 
-            darkInk: '#e5e7eb',
+            darkInk: '#f2f2f2',
             darkFog: '#9ca3af',
             darkLine: '#1f2937',
-            darkPaper: '#0a0d14',
+            darkPaper: '#0a0a0a',
           }
         }
       }
@@ -146,7 +151,7 @@
   <!-- Dark mode bootstrap -->
   <script>
     const theme = localStorage.getItem('theme');
-    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (theme !== 'light') {
       document.documentElement.classList.add('dark');
     }
   </script>
@@ -155,21 +160,36 @@
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 1.4s ease, transform 1.4s ease;
+      transition: opacity 1.2s ease, transform 1.2s ease;
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .zoom-wrap {
-      overflow: hidden;
+    .reveal-delay-1.visible { transition-delay: .12s; }
+    .reveal-delay-2.visible { transition-delay: .24s; }
+    .reveal-delay-3.visible { transition-delay: .36s; }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
-    .zoom-img {
-      transform: scale(1.08);
-      transition: transform 2.5s ease;
+    @media (min-width: 768px) {
+      #hero-canvas {
+        left: 50%;
+        width: 50%;
+      }
     }
-    .zoom-img.visible {
-      transform: scale(1);
+
+    .weave-divider {
+      width: 100%;
+      height: 14rem;
+      display: block;
+    }
+    .weave-divider path {
+      stroke: currentColor;
     }
   </style>
 </head>
@@ -177,7 +197,7 @@
 <body class="bg-paper text-ink dark:bg-darkPaper dark:text-darkInk font-sans">
 
   <!-- HEADER -->
-  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper dark:bg-darkPaper z-50">
+  <header class="border-b border-line dark:border-darkLine fixed w-full bg-paper/90 dark:bg-darkPaper/90 backdrop-blur z-50">
   <div class="max-w-7xl mx-auto px-4 md:px-10 py-6 md:py-8 flex justify-between items-center">
 
     <span class="tracking-[0.35em] text-sm font-bold">SIDHILYNX</span>
@@ -185,11 +205,12 @@
     <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden text-xs font-bold tracking-widest">MENU</button>
 
     <div class="hidden md:flex items-center gap-10">
-      <nav class="space-x-12 text-sm text-fog dark:text-darkFog">
-        <a href="index.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Home</a>
+      <nav class="space-x-10 text-sm text-fog dark:text-darkFog">
+        <a href="index.html" class="text-ink dark:text-darkInk transition-colors">Home</a>
         <a href="about.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">About</a>
         <a href="portfolio.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Portfolio</a>
         <a href="governance.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Governance</a>
+        <a href="careers.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Careers</a>
         <a href="contact.html" class="hover:text-ink dark:hover:text-darkInk transition-colors">Contact</a>
       </nav>
       <button onclick="toggleTheme()" class="text-xs tracking-wide text-fog dark:text-darkFog">MODE</button>
@@ -201,132 +222,393 @@
     <a href="about.html">ABOUT</a>
     <a href="portfolio.html">PORTFOLIO</a>
     <a href="governance.html">GOVERNANCE</a>
+    <a href="careers.html">CAREERS</a>
     <a href="contact.html">CONTACT</a>
     <button onclick="toggleTheme()" class="pt-4 border-t border-line dark:border-darkLine">TOGGLE MODE</button>
   </div>
 </header>
 
   <!-- HERO -->
- <section class="h-screen relative zoom-wrap">
-  <img src="assets/images/hero.jpg"
-       class="absolute inset-0 w-full h-full object-cover grayscale zoom-img"
-       alt="Institutional authority" />
+  <section class="h-screen relative bg-paper dark:bg-darkPaper overflow-hidden">
+    <canvas id="hero-canvas"></canvas>
 
-  <div class="absolute inset-0 bg-black/50 dark:bg-black/65"></div>
-
-  <div class="relative z-10 h-full flex items-center max-w-7xl mx-auto px-10">
-    <h1 class="font-serif text-4xl md:text-7xl text-white leading-tight reveal">
-      This entity<br>
-      was built to endure.
-    </h1>
-  </div>
-</section>
-
-<!-- DECLARATION -->
-<section class="max-w-7xl mx-auto px-10 py-44">
-  <p class="text-2xl max-w-4xl leading-[1.65] reveal
-            text-fog dark:text-darkFog">
-    SidhiLynx is a parent and holding entity established to govern,
-    protect, and preserve independent systems across technology
-    and education.
-    <br><br>
-    It does not exist to chase momentum, trends, or visibility.
-    It exists to ensure structural correctness across time.
-    <br><br>
-    Sidhi operates for endurance. Not acceleration.
-  </p>
-</section>
-
-<!-- MONUMENT IMAGE -->
-<section class="zoom-wrap">
-  <img src="assets/images/monument.jpg"
-       class="w-full h-[90vh] object-cover grayscale zoom-img"
-       alt="Monumental institutional architecture" />
-</section>
-
-<!-- PHILOSOPHY -->
-<section class="max-w-7xl mx-auto px-10 py-44">
-  <h2 class="font-serif text-4xl mb-20 reveal">Philosophy</h2>
-
-  <div class="grid md:grid-cols-2 gap-28">
-    <p class="text-fog dark:text-darkFog leading-[1.7] reveal">
-      We assume resistance.
-      We assume rejection.
-      We assume indifference.
-      <br><br>
-      Systems built for approval collapse when approval disappears.
-      Therefore, Sidhi governs systems that do not depend on permission
-      to remain functional.
-    </p>
-
-    <p class="text-fog dark:text-darkFog leading-[1.7] reveal">
-      SidhiLynx removes fragility from ambition.
-      <br><br>
-      Every initiative governed by this entity must withstand pressure,
-      scrutiny, failure, and time — without structural compromise.
-    </p>
-  </div>
-</section>
-
-<!-- FINAL STATEMENT -->
-<section class="max-w-7xl mx-auto px-10 py-52">
-  <p class="font-serif text-3xl max-w-5xl leading-[1.6] reveal
-            text-fog dark:text-darkFog">
-    SidhiLynx is not an experiment.
-    <br><br>
-    It is a permanent structure designed to remain intact
-    when relevance fades, individuals change, and cycles end.
-    <br><br>
-    This entity was built to last.
-  </p>
-</section>
-
-<!-- LUMETRIX LEARN SECTION -->
-<section class="max-w-7xl mx-auto px-10 py-44 border-t border-line dark:border-darkLine">
-  <p class="text-xs tracking-[0.3em] text-fog dark:text-darkFog mb-12 reveal">ACTIVE INITIATIVE</p>
-
-  <div class="grid md:grid-cols-2 gap-20 items-start">
-    <div>
-      <h2 class="font-serif text-4xl mb-10 reveal">Lumetrix Learn</h2>
-      <p class="text-fog dark:text-darkFog leading-[1.75] reveal">
-        A coding practice and skill-proof platform built for engineering students.
-        Students practice real programming problems, earn verifiable certificates,
-        and build auto-generated portfolio pages — free to start.
-        <br><br>
-        Supporting Python, Java, C, C++, Verilog, VHDL, SQL, and MongoDB
-        from day one.
-      </p>
+    <div class="absolute inset-0 z-10 flex items-center max-w-7xl mx-auto px-6 md:px-10 pointer-events-none">
+      <div class="md:max-w-[46%]">
+        <p class="font-mono text-xs tracking-[0.3em] text-fog dark:text-darkFog mb-8 reveal">SIDHILYNX</p>
+        <h1 class="font-serif text-5xl md:text-7xl leading-[0.95] reveal">
+          We remove the<br>
+          manual work from<br>
+          teaching and learning.
+        </h1>
+        <p class="mt-10 text-lg md:text-xl max-w-xl text-fog dark:text-darkFog reveal reveal-delay-1">
+          SidhiLynx is the company behind Lumetrix Play, Learn, and Labs —
+          three different answers to the same problem.
+        </p>
+      </div>
     </div>
 
-    <div class="space-y-8 reveal">
-      <div class="border-t border-line dark:border-darkLine pt-8">
-        <p class="text-xs tracking-widest text-fog dark:text-darkFog mb-2">STATUS</p>
-        <p class="text-ink dark:text-darkInk text-sm">Active — Open to Students</p>
-      </div>
-      <div class="border-t border-line dark:border-darkLine pt-8">
-        <p class="text-xs tracking-widest text-fog dark:text-darkFog mb-2">DOMAIN</p>
-        <p class="text-ink dark:text-darkInk text-sm">Engineering Education · EdTech</p>
-      </div>
-      <div class="border-t border-line dark:border-darkLine pt-8">
-        <p class="text-xs tracking-widest text-fog dark:text-darkFog mb-2">ACCESS</p>
-        <a href="https://lumetrixlearn.sidhi.xyz"
-           class="text-sm tracking-widest text-ink dark:text-darkInk border-b border-ink dark:border-darkInk pb-1 hover:opacity-50 transition-opacity">
-          LUMETRIXLEARN.SIDHI.XYZ →
+    <div class="absolute bottom-10 left-0 w-full flex justify-center z-10">
+      <span class="font-mono text-[10px] tracking-[0.3em] text-fog dark:text-darkFog reveal reveal-delay-2">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- DECLARATION -->
+  <section class="max-w-7xl mx-auto px-6 md:px-10 py-44">
+    <p class="text-2xl md:text-3xl max-w-4xl leading-[1.5] font-serif reveal">
+      Grading, record-keeping, and content creation eat more teaching time
+      than teaching does. We build software to take that work off people's
+      plates.
+    </p>
+    <p class="mt-10 text-lg max-w-3xl leading-[1.7] text-fog dark:text-darkFog reveal reveal-delay-1">
+      We believe the most effective solutions are built by people who have
+      lived the problem — not just studied it. It's why we hire, and how we
+      build.
+    </p>
+  </section>
+
+  <!-- WEAVE DIVIDER -->
+  <section class="border-y border-line dark:border-darkLine bg-paper dark:bg-darkPaper">
+    <svg viewBox="0 0 1200 220" class="weave-divider text-ink dark:text-darkInk opacity-80" preserveAspectRatio="none">
+      <g fill="none" stroke-width="2">
+        <path d="M0,40 C150,40 150,180 300,180 C450,180 450,40 600,40 C750,40 750,180 900,180 C1050,180 1050,40 1200,40" opacity="0.9"/>
+        <path d="M0,70 C150,70 150,150 300,150 C450,150 450,70 600,70 C750,70 750,150 900,150 C1050,150 1050,70 1200,70" opacity="0.6"/>
+        <path d="M0,100 C150,100 150,120 300,120 C450,120 450,100 600,100 C750,100 750,120 900,120 C1050,120 1050,100 1200,100" opacity="0.35"/>
+      </g>
+    </svg>
+  </section>
+
+  <!-- LUMETRIX ECOSYSTEM -->
+  <section class="max-w-7xl mx-auto px-6 md:px-10 py-44">
+    <p class="font-mono text-xs tracking-[0.3em] text-fog dark:text-darkFog mb-6 reveal">LUMETRIX</p>
+    <h2 class="font-serif text-4xl md:text-5xl mb-20 reveal">Three products. Three different jobs.</h2>
+
+    <!-- LUMETRIX PLAY — LIVE -->
+    <div class="grid md:grid-cols-2 gap-16 items-start border-t border-line dark:border-darkLine pt-16 reveal">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-2 h-2 rounded-full bg-ink dark:bg-darkInk animate-pulse"></span>
+          <span class="font-mono text-xs tracking-widest text-fog dark:text-darkFog">LIVE · FREE</span>
+        </div>
+        <h3 class="font-serif text-3xl mb-6">Lumetrix Play</h3>
+        <p class="text-fog dark:text-darkFog leading-[1.75]">
+          For self-learners. Feed it your own material — YouTube videos,
+          notes, your college syllabus — and a personalization engine turns
+          it into an adaptive, gamified coding path built around how you
+          actually learn.
+        </p>
+        <a href="https://play.lumetrix.sidhi.xyz" class="inline-block mt-8 text-sm tracking-widest border-b border-ink dark:border-darkInk pb-1 hover:opacity-50 transition-opacity">
+          OPEN LUMETRIX PLAY →
         </a>
       </div>
+      <div class="flex flex-col gap-8 md:pt-4">
+        <div>
+          <p class="font-mono text-5xl md:text-6xl" data-count-to="360">0</p>
+          <p class="font-mono text-xs tracking-widest text-fog dark:text-darkFog mt-2">LEARNERS AND GROWING</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="border-t border-line dark:border-darkLine">
-  <div class="max-w-7xl mx-auto px-10 py-14 text-sm flex items-center gap-4
-              text-fog dark:text-darkFog">
-    
-    <span>© SidhiLynx. All rights reserved.</span>
-  </div>
-</footer>
+    <!-- LUMETRIX LABS + LEARN — BETA -->
+    <div class="grid md:grid-cols-2 gap-16 mt-24 border-t border-line dark:border-darkLine pt-16">
+      <div class="reveal">
+        <span class="font-mono text-xs tracking-widest text-fog dark:text-darkFog">IN BETA · INSTITUTIONS</span>
+        <h3 class="font-serif text-2xl mt-5 mb-4">Lumetrix Labs</h3>
+        <p class="text-fog dark:text-darkFog leading-[1.7]">
+          For colleges and institutions. Teachers create classrooms,
+          assignments, and full courses; an automated judge grades every
+          submission, and students get auto-generated records of their
+          work. No manual grading.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="font-mono text-xs tracking-widest text-fog dark:text-darkFog">IN BETA · INSTITUTIONS</span>
+        <h3 class="font-serif text-2xl mt-5 mb-4">Lumetrix Learn</h3>
+        <p class="text-fog dark:text-darkFog leading-[1.7]">
+          A marketplace where course creators sell courses with code
+          evaluation built in — each student gets a dynamic page tracking
+          their progress, with community support and AI-assisted hints
+          along the way.
+        </p>
+      </div>
+    </div>
 
+    <!-- UNDISCLOSED -->
+    <div class="mt-24 border-t border-line dark:border-darkLine pt-16 reveal">
+      <span class="font-mono text-xs tracking-widest text-fog dark:text-darkFog">IN DEVELOPMENT</span>
+      <p class="font-serif text-2xl mt-5 max-w-2xl">
+        A few more systems are in progress. We're not talking about them
+        yet.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL STATEMENT -->
+  <section class="max-w-7xl mx-auto px-6 md:px-10 py-52 border-t border-line dark:border-darkLine">
+    <p class="font-serif text-3xl md:text-4xl max-w-5xl leading-[1.4] reveal">
+      Different products, same reason for existing: take the busywork out
+      of teaching and learning, and let people get back to the actual work.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line dark:border-darkLine">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-14 text-sm flex flex-wrap items-center justify-between gap-4
+                text-fog dark:text-darkFog">
+      <span>© SidhiLynx. All rights reserved.</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/company/sidhilynx" class="hover:text-ink dark:hover:text-darkInk transition-colors">LinkedIn</a>
+        <a href="https://www.instagram.com/sidhilynx/" class="hover:text-ink dark:hover:text-darkInk transition-colors">Instagram</a>
+        <a href="https://www.youtube.com/@Sidhilynx" class="hover:text-ink dark:hover:text-darkInk transition-colors">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- THREE.JS HERO: WORLD-MAP GLOBE -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script>
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas || !window.THREE) return;
+
+      const heroSection = canvas.parentElement;
+      const isDark = () => document.documentElement.classList.contains('dark');
+      const RADIUS = 2;
+
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, heroSection.clientWidth / heroSection.clientHeight, 0.1, 100);
+      camera.position.z = 9;
+
+      function setSize() {
+        const w = canvas.clientWidth, h = heroSection.clientHeight;
+        renderer.setSize(w, h);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      }
+      setSize();
+      window.addEventListener('resize', setSize);
+
+      const group = new THREE.Group();
+      scene.add(group);
+      const lineColor = () => (isDark() ? 0xf2f2f2 : 0x0a0a0a);
+
+      function toVector3(lon, lat, r) {
+        const phi = (90 - lat) * (Math.PI / 180);
+        const theta = (lon + 180) * (Math.PI / 180);
+        return new THREE.Vector3(
+          -r * Math.sin(phi) * Math.cos(theta),
+          r * Math.cos(phi),
+          r * Math.sin(phi) * Math.sin(theta)
+        );
+      }
+
+      // Custom shader material: fades lines on the far side of the sphere for real depth.
+      function depthLineMaterial(opacity) {
+        return new THREE.ShaderMaterial({
+          transparent: true,
+          uniforms: { color: { value: new THREE.Color(lineColor()) }, baseOpacity: { value: opacity } },
+          vertexShader: `
+            varying float vDepth;
+            void main() {
+              vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+              vDepth = -mvPosition.z;
+              gl_Position = projectionMatrix * mvPosition;
+            }
+          `,
+          fragmentShader: `
+            uniform vec3 color;
+            uniform float baseOpacity;
+            varying float vDepth;
+            void main() {
+              float fade = smoothstep(7.0, 9.0, vDepth);
+              gl_FragColor = vec4(color, baseOpacity * (1.0 - fade * 0.85));
+            }
+          `,
+        });
+      }
+
+      // Graticule: faint lat/long grid lines covering the full sphere.
+      const graticuleMat = depthLineMaterial(0.18);
+      for (let lat = -60; lat <= 60; lat += 20) {
+        const pts = [];
+        for (let lon = -180; lon <= 180; lon += 4) pts.push(toVector3(lon, lat, RADIUS));
+        group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), graticuleMat));
+      }
+      for (let lon = -180; lon < 180; lon += 20) {
+        const pts = [];
+        for (let lat = -90; lat <= 90; lat += 4) pts.push(toVector3(lon, lat, RADIUS));
+        group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), graticuleMat));
+      }
+
+      // Landmasses: real coastline outlines plotted on the sphere surface.
+      const landMat = depthLineMaterial(0.85);
+      fetch('https://unpkg.com/world-atlas@2/land-110m.json')
+        .then((r) => r.json())
+        .then((topology) => {
+          const geo = topojson.feature(topology, topology.objects.land);
+          geo.features.forEach((feature) => {
+            const polygons = feature.geometry.type === 'Polygon'
+              ? [feature.geometry.coordinates]
+              : feature.geometry.coordinates;
+            polygons.forEach((poly) => {
+              poly.forEach((ring) => {
+                const pts = ring.map(([lon, lat]) => toVector3(lon, lat, RADIUS * 1.002));
+                group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), landMat));
+              });
+            });
+          });
+        })
+        .catch(() => {});
+
+      // Scattered point texture: small static dots clustered around a few regions.
+      const DOT_CLUSTERS = [
+        { lon: -98, lat: 39, spread: 14, count: 95 },   // North America
+        { lon: -45, lat: -15, spread: 12, count: 60 },  // South America
+        { lon: 10, lat: 50, spread: 12, count: 85 },    // Europe
+        { lon: 78, lat: 22, spread: 10, count: 80 },    // South Asia
+        { lon: 113, lat: 30, spread: 13, count: 90 },   // East Asia
+        { lon: 25, lat: 5, spread: 14, count: 50 },     // Africa
+        { lon: 135, lat: -27, spread: 10, count: 35 },  // Australia
+      ];
+      const dotPositions = [];
+      DOT_CLUSTERS.forEach((cluster) => {
+        for (let i = 0; i < cluster.count; i++) {
+          const lon = cluster.lon + (Math.random() - 0.5) * cluster.spread * 2;
+          const lat = cluster.lat + (Math.random() - 0.5) * cluster.spread;
+          const p = toVector3(lon, lat, RADIUS * 1.004);
+          dotPositions.push(p.x, p.y, p.z);
+        }
+      });
+      const dotGeo = new THREE.BufferGeometry();
+      dotGeo.setAttribute('position', new THREE.Float32BufferAttribute(dotPositions, 3));
+      const dotMat = new THREE.PointsMaterial({ color: lineColor(), size: 0.028, transparent: true, opacity: 0.55, sizeAttenuation: true });
+      const dots = new THREE.Points(dotGeo, dotMat);
+      group.add(dots);
+
+      // Hub markers: glowing pulsing points at key locations, connected by animated arcs.
+      const HUBS = [
+        { lon: 80.27, lat: 13.08 },  // Chennai
+        { lon: -122.42, lat: 37.77 }, // San Francisco
+        { lon: -0.13, lat: 51.51 },   // London
+        { lon: 103.82, lat: 1.35 },   // Singapore
+      ];
+      const markerMat = new THREE.MeshBasicMaterial({ color: lineColor() });
+      const markers = HUBS.map((h) => {
+        const pos = toVector3(h.lon, h.lat, RADIUS * 1.01);
+        const mesh = new THREE.Mesh(new THREE.SphereGeometry(0.022, 12, 12), markerMat);
+        mesh.position.copy(pos);
+        group.add(mesh);
+
+        const ringGeo = new THREE.RingGeometry(0.025, 0.03, 24);
+        const ringMat = new THREE.MeshBasicMaterial({ color: lineColor(), transparent: true, opacity: 0.7, side: THREE.DoubleSide });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.position.copy(pos);
+        ring.lookAt(pos.clone().multiplyScalar(2));
+        group.add(ring);
+        return { pos, ring, ringMat, phase: Math.random() * Math.PI * 2 };
+      });
+
+      function greatCircleArc(a, b, r) {
+        const pts = [];
+        const segments = 64;
+        for (let i = 0; i <= segments; i++) {
+          const t = i / segments;
+          const mid = a.clone().lerp(b, t).normalize().multiplyScalar(r * (1 + Math.sin(Math.PI * t) * 0.25));
+          pts.push(mid);
+        }
+        return pts;
+      }
+      const arcMat = depthLineMaterial(0.55);
+      const arcLines = [];
+      for (let i = 0; i < markers.length; i++) {
+        const next = markers[(i + 1) % markers.length];
+        const pts = greatCircleArc(markers[i].pos, next.pos, RADIUS);
+        const geo = new THREE.BufferGeometry().setFromPoints(pts);
+        geo.setDrawRange(0, 0);
+        const line = new THREE.Line(geo, arcMat);
+        group.add(line);
+        arcLines.push({ line, total: pts.length, offset: i * 0.6 });
+      }
+
+      // Drag-to-rotate.
+      let dragging = false, lastX = 0, lastY = 0;
+      let dragVelX = 0, dragVelY = 0;
+      canvas.style.cursor = 'grab';
+      canvas.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        lastX = e.clientX; lastY = e.clientY;
+        canvas.style.cursor = 'grabbing';
+      });
+      window.addEventListener('pointerup', () => { dragging = false; canvas.style.cursor = 'grab'; });
+      window.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        dragVelX = (e.clientX - lastX) * 0.005;
+        dragVelY = (e.clientY - lastY) * 0.005;
+        group.rotation.y += dragVelX;
+        group.rotation.x += dragVelY;
+        lastX = e.clientX; lastY = e.clientY;
+      });
+
+      let targetX = 0.4, targetY = 0;
+      window.addEventListener('pointermove', (e) => {
+        if (dragging) return;
+        targetX = (e.clientX / window.innerWidth - 0.5) * 1.2;
+        targetY = (e.clientY / window.innerHeight - 0.5) * 0.6;
+      });
+
+      // Ease-in: start zoomed out, drift to resting distance on load.
+      const startZ = 13, restZ = 9;
+      camera.position.z = startZ;
+      const loadStart = performance.now();
+
+      const clock = new THREE.Clock();
+      function animate() {
+        requestAnimationFrame(animate);
+        const elapsed = clock.getElapsedTime();
+
+        const introT = Math.min((performance.now() - loadStart) / 1800, 1);
+        const eased = 1 - Math.pow(1 - introT, 3);
+        camera.position.z = startZ + (restZ - startZ) * eased;
+
+        if (!dragging) {
+          group.rotation.y += 0.0015;
+          group.rotation.y += targetX * 0.0006;
+          group.rotation.x += (-targetY - group.rotation.x) * 0.02;
+          dragVelX *= 0.94; dragVelY *= 0.94;
+        } else {
+          dragVelX = 0; dragVelY = 0;
+        }
+
+        markers.forEach((m) => {
+          const pulse = 1 + Math.sin(elapsed * 2 + m.phase) * 0.4;
+          m.ring.scale.setScalar(pulse);
+          m.ringMat.opacity = 0.7 - (pulse - 1) * 0.6;
+        });
+
+        arcLines.forEach((a, i) => {
+          const t = (elapsed * 0.25 + a.offset) % 1.6;
+          const drawCount = Math.max(0, Math.min(a.total, Math.floor(a.total * Math.min(t, 1))));
+          a.line.geometry.setDrawRange(0, t > 1.3 ? 0 : drawCount);
+        });
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      const themeObserver = new MutationObserver(() => {
+        const c = new THREE.Color(lineColor());
+        graticuleMat.uniforms.color.value = c;
+        landMat.uniforms.color.value = c;
+        arcMat.uniforms.color.value = c;
+        markerMat.color = c;
+        dotMat.color = c;
+        markers.forEach((m) => (m.ringMat.color = c));
+      });
+      themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
 
   <!-- SCRIPTS -->
   <script>
@@ -336,7 +618,7 @@
       });
     }, { threshold: 0.25 });
 
-    document.querySelectorAll('.reveal, .zoom-img').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     function toggleTheme() {
       const html = document.documentElement;
@@ -345,6 +627,26 @@
         html.classList.contains('dark') ? 'dark' : 'light'
       );
     }
+
+    // Count-up stat animation
+    const countEls = document.querySelectorAll('[data-count-to]');
+    const countObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.countTo, 10);
+        const duration = 1400;
+        const start = performance.now();
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.floor(progress * target) + (progress === 1 ? '+' : '');
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    countEls.forEach(el => countObserver.observe(el));
   </script>
 
 </body>
