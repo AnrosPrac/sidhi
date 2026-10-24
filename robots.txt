@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sidhi.xyz/sitemap.xml
+Sitemap: https://sidhilynx.com/sitemap.xml
